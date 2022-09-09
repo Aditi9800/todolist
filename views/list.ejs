@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Job List</title>
+</head>
+<body>
+    <div class="box" id="heading">
+        <h1 style="color: rgb(74, 53, 92);"><%=kindofday%></h1>
+        <h1 style="color: rgb(86, 66, 104);">Jobs_List</h1>
+    </div>
+    
+   
+    <div class="box">
+        <!--      <li> <%= newListItem %> </li>    -->
+
+        <%newListItem.forEach(function(element){%>
+            <form action="/delete" method="post" >
+            <div class="item">
+                <input type="checkbox" name="checkbox" value="<%=element._id%>"  onchange="this.form.submit()">
+             <p> <%=element.name%>  </p>
+         </div>
+        </form>
+        <%})%>
+
+            <!-- <%for(var i=0;i<newListItem.length;i++){%>
+               <div class="item">
+                   <input type="checkbox">
+                <p> <%=newListItem[i].name%>  </p>
+            </div>
+            <%}%> -->
+
+               
+               <form action="/" method="post" >
+                <input type="text" name="newItem" placeholder="New Job" autocomplete="off">
+                <button type="submit" name="button">+</button>
+            </form>
+   </div>
+  
+   
+</form>
+<footer>
+    Aditi Sahu, JSSATE
+</footer>
+</body>
+</html>
