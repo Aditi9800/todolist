@@ -1,6 +1,15 @@
-const express=require("express");
-const bodyParser=require("body-parser");
+//mongodb://localhost:27017/todolistDB
+//mongodb+srv://admin:test1234@cluster0.uvertd2.mongodb.net/?retryWrites=true&w=majority
+
+const express = require("express");
+const bodyParser = require("body-parser");
+const request = require("request");
+const { dirname } = require("path");
 const mongoose = require("mongoose");
+const md5 = require("md5");
+const ejs = require("ejs");
+const e = require("express");
+
 
 
 const app=express();
